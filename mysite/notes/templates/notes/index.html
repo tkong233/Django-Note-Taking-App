@@ -14,5 +14,10 @@
             <li>{{ note.text }}</li>
         {% endfor %}
     </ul>
+    <form method="post" action="{% url 'notes:add' %}">
+        {% csrf_token %}
+        <input name="new_note" type="text" pattern=".{1,120}" required title="you can enter 1 to 120 characters">
+        <input type="submit" value="Add">
+    </form>
 </body>
 </html>
