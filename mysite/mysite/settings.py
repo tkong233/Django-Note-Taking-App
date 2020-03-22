@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mysql',
+    'notes.apps.NotesConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_practice',
+        'NAME': 'notes',
         'USER': 'root',
         'PASSWORD': '18901108998kt',
         'HOST': 'localhost',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        }
     }
 }
 
