@@ -2,6 +2,8 @@
 
 Django Note Taking App allows user to save notes and view them on a sticky-note-style dashboard.
 
+See a live demo at: https://django-note-taking-app.herokuapp.com/notes/
+
 ![app snapshot](./app-demo.png)
 
 The app also comes with an admin page to easily access and modify database.
