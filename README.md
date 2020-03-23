@@ -31,6 +31,13 @@ These instructions will get you a copy of the project up and running on your loc
 source bin/activate
 ```
 
+* Create the database.(./mysite/)
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 * Start the server. (./mysite/)
 
 ```
