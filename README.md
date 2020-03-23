@@ -86,6 +86,45 @@ Run the deployment checklist that django provides
 python manage.py check --deploy
 ```
 
+* Installing the project on a host (using Heroku as an example)
+
+Create a `Procfile` in the project root directory and paste the following into the file
+```
+web: gunicorn mysite.wsgi --log-file -
+```
+
+Install `gunicorn`
+
+```
+pip3 install gunicorn
+```
+
+Install `dj-database-url`
+```
+pip3 install dj-database-url
+```
+
+Configure database using `dj-database-url` in `settings.py`
+```
+# Heroku: Update database configuration from $DATABASE_URL.
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+```
+
+Register a Heroku account and install Heroku cli.
+
+
+Create Heroku project and deploy our project
+
+```
+heroku create django-note-taking-app
+
+git push heroku master
+
+heroku open
+```
 
 ## Built With
 
