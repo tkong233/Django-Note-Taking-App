@@ -1,1 +1,106 @@
-# Django-practice
+# Django Note Taking App
+
+Django Note Taking App allows user to save notes and view them on a sticky-note-style dashboard.
+
+![app snapshot](./app-demo.png)
+
+The app also comes with an admin page to easily access and modify database.
+
+![admin snapshot1](./admin-demo1.png)
+![admin snapshot2](./admin-demo2.png)
+
+## Getting Started
+
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+* Python 3
+* Django 3
+* MySQL
+* pymsql
+* virtualenv
+
+### Installing
+
+* First, make sure you have all the dependencies listed above installed.
+
+* Activate the virtual environment (at the base project directory)
+
+```
+source bin/activate
+```
+
+* Start the server. (./mysite/)
+
+```
+python manage.py runserver
+```
+
+* If the server is started successfully, you can now access the app at
+
+```
+http://127.0.0.1:8000/notes
+```
+
+and the admin page at
+
+```
+http://127.0.0.1:8000/admin
+```
+
+using a registered admin account:
+```
+username: admin
+
+password: admin1234
+```
+
+## Deployment
+
+* Choosing a hosting provider
+The hosting provider should support django projects. See a fairly exhaustive list at [Djangofriendly host](https://djangofriendly.com/index.html)
+
+* Getting the project ready to publish
+
+Read our SECRET_KEY and DEBUG variables from environment variables if they are defined, but otherwise use the default values in the configuration file.
+
+./mysite/mysite/settings.py
+
+```
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+```
+
+```
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+```
+
+Run the deployment checklist that django provides
+
+```
+python manage.py check --deploy
+```
+
+
+## Built With
+
+* [Django 3](https://www.djangoproject.com/) - the web framework used
+* [MySQL](https://www.mysql.com/) - to create the database
+
+## Author
+
+* **Tong Kong**
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* This app is made based on [Django Tutorial: make a note taking app](https://pythonspot.com/django-tutorial-building-a-note-taking-app/)
