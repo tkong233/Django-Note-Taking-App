@@ -31,14 +31,14 @@ These instructions will get you a copy of the project up and running on your loc
 source bin/activate
 ```
 
-* Create the database.(./mysite/)
+* Create the database`./mysite/`
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-* Start the server. (./mysite/)
+* Start the server `./mysite/`
 
 ```
 python manage.py runserver
@@ -61,6 +61,12 @@ using a registered admin account:
 username: admin
 
 password: admin1234
+```
+
+or create a new admin account:
+
+```
+python manage.py createsuperuser
 ```
 
 ## Deployment
@@ -145,7 +151,7 @@ heroku open
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
